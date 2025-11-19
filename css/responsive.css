@@ -1,0 +1,389 @@
+/* ===== АДАПТИВНОСТЬ ===== */
+/* Мобильные: 360px | Планшеты: 768px | Десктоп: 1920px */
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ (360px - 767px) ===== */
+
+@media (max-width: 767px) {
+    /* ИЗМЕНЕНИЕ 1: Скрытие навигации, показ бургера */
+    .nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background-color: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+        padding: var(--spacing-md) 0;
+        z-index: 999;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav__link {
+        padding: var(--spacing-md) var(--spacing-lg);
+        border-radius: 0;
+    }
+
+    .nav__link::after {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    /* ИЗМЕНЕНИЕ 2: Компактный хедер */
+    .header__container {
+        height: 60px;
+        padding: 0 var(--spacing-md);
+    }
+
+    .logo {
+        gap: var(--spacing-xs);
+        font-size: 1.2rem;
+    }
+
+    .logo__svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo__text {
+        display: none;
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        margin-left: auto;
+    }
+
+    /* ИЗМЕНЕНИЕ 3: Слайдер адаптирован */
+    .slider__content {
+        position: relative;
+        max-width: 100%;
+        padding: var(--spacing-md);
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    .slider__title {
+        font-size: 1.3rem;
+    }
+
+    .slider__price {
+        font-size: 1.2rem;
+    }
+
+    .slider__image {
+        height: 250px;
+    }
+
+    .slider__btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+
+    .slider__btn--prev {
+        left: var(--spacing-sm);
+    }
+
+    .slider__btn--next {
+        right: var(--spacing-sm);
+    }
+
+    .slider__indicators {
+        bottom: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+
+    /* ИЗМЕНЕНИЕ 4: Сетки переходят в одну колонку */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .partners-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    /* Типография */
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Расстояния */
+    .slider-section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .search-section,
+    .benefits-section,
+    .popular-games-section,
+    .partners-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    /* Поиск */
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box__input {
+        padding: var(--spacing-md);
+    }
+
+    /* Контейнер */
+    /* Формы */
+    .auth-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-info {
+        padding: var(--spacing-lg);
+        order: 2;
+    }
+
+    .auth-form-wrapper {
+        padding: var(--spacing-lg);
+        order: 1;
+    }
+}
+
+/* ===== ПЛАНШЕТНАЯ ВЕРСИЯ (768px - 1919px) ===== */
+
+@media (min-width: 768px) and (max-width: 1919px) {
+    /* ИЗМЕНЕНИЕ 1: Хедер полный, но компактнее */
+    .header__container {
+        height: 65px;
+    }
+
+    .logo {
+        gap: var(--spacing-sm);
+        font-size: 1.3rem;
+    }
+
+    .logo__svg {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo__text {
+        display: inline;
+    }
+
+    .nav {
+        gap: var(--spacing-md);
+        margin-left: var(--spacing-lg);
+    }
+
+    .burger {
+        display: none;
+    }
+
+    /* ИЗМЕНЕНИЕ 2: Слайдер адаптирован для планшета */
+    .slider__image {
+        height: 350px;
+    }
+
+    .slider__content {
+        max-width: 350px;
+        padding: var(--spacing-lg);
+    }
+
+    .slider__title {
+        font-size: 1.7rem;
+    }
+
+    /* ИЗМЕНЕНИЕ 3: Сетки в 2 колонки */
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    /* ИЗМЕНЕНИЕ 4: Подвал в 2 колонки */
+    .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    /* Типография */
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Расстояния */
+    .slider-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .search-section,
+    .benefits-section,
+    .popular-games-section,
+    .partners-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+}
+
+/* ===== ДЕСКТОПНАЯ ВЕРСИЯ (1920px+) ===== */
+
+@media (min-width: 1920px) {
+    /* ИЗМЕНЕНИЕ 1: Полная навигация в хедере */
+    .header__container {
+        height: 70px;
+        padding: 0 var(--spacing-lg);
+    }
+
+    .logo {
+        gap: var(--spacing-md);
+        font-size: 1.5rem;
+    }
+
+    .logo__svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav {
+        gap: var(--spacing-xl);
+        margin-left: var(--spacing-2xl);
+    }
+
+    .burger {
+        display: none !important;
+    }
+
+    /* ИЗМЕНЕНИЕ 2: Слайдер во всю ширину */
+    .slider__image {
+        height: 450px;
+    }
+
+    .slider__content {
+        max-width: 450px;
+        padding: var(--spacing-xl);
+        left: var(--spacing-xl);
+        bottom: var(--spacing-xl);
+    }
+
+    .slider__title {
+        font-size: 2.2rem;
+    }
+
+    .slider__price {
+        font-size: 1.8rem;
+    }
+
+    .slider__btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    /* ИЗМЕНЕНИЕ 3: Сетки в полный размер */
+    .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    /* ИЗМЕНЕНИЕ 4: Подвал в 4 колонки */
+    .footer__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-2xl);
+    }
+
+    /* Типография */
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    /* Расстояния */
+    .slider-section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .search-section,
+    .benefits-section,
+    .popular-games-section,
+    .partners-section {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .footer {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    /* Контейнер */
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .search-box {
+        max-width: 700px;
+    }
+}
+
+/* ===== ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (360px и меньше) ===== */
+@media (max-width: 375px) {
+    .logo__svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .game-card__image {
+        height: 200px;
+    }
+
+    .slider__indicators {
+        gap: 6px;
+    }
+
+    .slider__indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
