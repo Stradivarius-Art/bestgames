@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - BestGames</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/forms.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+    <!-- ===== ХЕДЕР ===== -->
+    <header class="header">
+        <div class="header__container">
+            <!-- Логотип -->
+            <a href="index.html" class="logo">
+                <img src="/assets/svg/Logo.svg" alt="Logo" class="logo__svg">
+                <span class="logo__text">BestGames</span>
+            </a>
+
+            <!-- Кнопка бургера для мобильных -->
+            <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+
+            <!-- Навигация -->
+            <nav class="nav" id="navMenu">
+                <a href="index.html#search" class="nav__link">Поиск</a>
+                <a href="catalog.html" class="nav__link">Каталог</a>
+                <a href="profile.html" class="nav__link">Профиль</a>
+                <a href="#" class="nav__link nav__link--auth" id="logoutBtn">Выйти</a>
+            </nav>
+
+            <!-- Кнопка переключения темы -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                <span class="theme-toggle__icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== ГЛАВНЫЙ КОНТЕНТ ===== -->
+    <main class="main">
+        <section class="profile-section auth-section">
+            <div class="container">
+                <div class="profile-wrapper auth-wrapper">
+                    <!-- Информация о профиле слева -->
+                    <div class="profile-info auth-info">
+                        <h1 class="profile-info__title auth-info__title">Ваш профиль</h1>
+                        <p class="profile-info__subtitle auth-info__subtitle">Управляйте своей учетной записью и покупками</p>
+                        
+                        <div class="profile-stats auth-benefits">
+                            <div class="profile-stat auth-benefit">
+                                <span class="profile-stat__icon auth-benefit__icon">🎮</span>
+                                <p class="profile-stat__text auth-benefit__text">Игр куплено: 12</p>
+                            </div>
+                            <div class="profile-stat auth-benefit">
+                                <span class="profile-stat__icon auth-benefit__icon">💰</span>
+                                <p class="profile-stat__text auth-benefit__text">Потрачено: $456.78</p>
+                            </div>
+                            <div class="profile-stat auth-benefit">
+                                <span class="profile-stat__icon auth-benefit__icon">⭐</span>
+                                <p class="profile-stat__text auth-benefit__text">Рейтинг: 4.8</p>
+                            </div>
+                            <div class="profile-stat auth-benefit">
+                                <span class="profile-stat__icon auth-benefit__icon">📅</span>
+                                <p class="profile-stat__text auth-benefit__text">Дата регистрации: 01.01.2026</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Форма профиля справа -->
+                    <div class="profile-form-wrapper auth-form-wrapper">
+                        <form class="profile-form auth-form" id="profileForm">
+                            <h2 class="profile-form__title auth-form__title">Личные данные</h2>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="profileEmail" class="form-group__label">E-mail</label>
+                                <input 
+                                    type="email" 
+                                    id="profileEmail" 
+                                    class="form-group__input" 
+                                    value="your@email.com"
+                                    readonly
+                                >
+                            </div>
+
+                            <!-- Фамилия -->
+                            <div class="form-group">
+                                <label for="profileLastname" class="form-group__label">Фамилия</label>
+                                <input 
+                                    type="text" 
+                                    id="profileLastname" 
+                                    class="form-group__input" 
+                                    value="Иванов"
+                                >
+                                <span class="form-group__error" id="profileLastnameError"></span>
+                            </div>
+
+                            <!-- Имя -->
+                            <div class="form-group">
+                                <label for="profileFirstname" class="form-group__label">Имя</label>
+                                <input 
+                                    type="text" 
+                                    id="profileFirstname" 
+                                    class="form-group__input" 
+                                    value="Иван"
+                                >
+                                <span class="form-group__error" id="profileFirstnameError"></span>
+                            </div>
+
+                            <!-- Дата рождения -->
+                            <div class="form-group">
+                                <label for="profileBirthdate" class="form-group__label">Дата рождения</label>
+                                <input 
+                                    type="date" 
+                                    id="profileBirthdate" 
+                                    class="form-group__input"
+                                    value="1990-01-01"
+                                >
+                                <span class="form-group__error" id="profileBirthdateError"></span>
+                            </div>
+
+                            <!-- Телефон -->
+                            <div class="form-group">
+                                <label for="profilePhone" class="form-group__label">Номер телефона</label>
+                                <input 
+                                    type="tel" 
+                                    id="profilePhone" 
+                                    class="form-group__input" 
+                                    value="+7 (999) 999-99-99"
+                                >
+                                <span class="form-group__error" id="profilePhoneError"></span>
+                            </div>
+
+                            <!-- Смена пароля -->
+                            <div class="form-group">
+                                <label for="newPassword" class="form-group__label">Новый пароль</label>
+                                <div class="password-wrapper">
+                                    <input 
+                                        type="password" 
+                                        id="newPassword" 
+                                        class="form-group__input" 
+                                        placeholder="Оставьте пустым, если не меняете"
+                                    >
+                                    <button 
+                                        type="button" 
+                                        class="password-toggle" 
+                                        id="newPasswordToggle"
+                                        aria-label="Показать пароль"
+                                    >
+                                        👁️
+                                    </button>
+                                </div>
+                                <span class="form-group__error" id="newPasswordError"></span>
+                            </div>
+
+                            <!-- Кнопка сохранения -->
+                            <button type="submit" class="btn btn--primary btn--large">Сохранить изменения</button>
+                        </form>
+
+                        <!-- Разделитель -->
+                        <div class="auth-divider">
+                            <span class="auth-divider__text">История покупок</span>
+                        </div>
+
+                        <!-- Список покупок -->
+                        <div class="purchase-history">
+                            <ul class="purchase-list">
+                                <li class="purchase-item">
+                                    <span class="purchase-item__name">Cyberpunk 2077</span>
+                                    <span class="purchase-item__date">15.12.2025</span>
+                                    <span class="purchase-item__price">$59.99</span>
+                                </li>
+                                <li class="purchase-item">
+                                    <span class="purchase-item__name">Elden Ring</span>
+                                    <span class="purchase-item__date">10.11.2025</span>
+                                    <span class="purchase-item__price">$49.99</span>
+                                </li>
+                                <!-- Добавить больше элементов по необходимости -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <!-- Контакты -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Контакты</h3>
+                    <p class="footer__text">📞 8-800-999-55-99</p>
+                    <p class="footer__text">✉️ best@games.ru</p>
+                </div>
+
+                <!-- Клиентам -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Клиентам</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">О нас</a></li>
+                        <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+                        <li><a href="#" class="footer__link">Условия использования</a></li>
+                    </ul>
+                </div>
+
+                <!-- Партнерам -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Партнерам</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Для разработчиков</a></li>
+                        <li><a href="#" class="footer__link">Для инвесторов</a></li>
+                        <li><a href="#" class="footer__link">Для рекламодателей</a></li>
+                    </ul>
+                </div>
+
+                <!-- Навигация -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__list">
+                        <li><a href="index.html" class="footer__link">Главная</a></li>
+                        <li><a href="register.html" class="footer__link">Регистрация</a></li>
+                        <li><a href="login.html" class="footer__link">Авторизация</a></li>
+                        <li><a href="profile.html" class="footer__link">Личный кабинет</a></li>
+                        <li><a href="index.html#search" class="footer__link">Поиск</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Копирайт -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2026 BestGames. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

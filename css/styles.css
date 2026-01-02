@@ -293,7 +293,7 @@ main.main {
 
 .slider__content {
     position: absolute;
-    left: var(--spacing-xl);
+    left: calc(var(--spacing-xl) + 3.5rem);
     bottom: var(--spacing-xl);
     background: rgba(0, 0, 0, 0.8);
     padding: var(--spacing-lg);
@@ -650,4 +650,80 @@ main.main {
 .footer__copyright {
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+
+/* === ФИЛЬТРЫ КАТАЛОГА — стиль как в задании === */
+.catalog-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    align-items: end;
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+    background: rgba(26, 26, 46, 0.6);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    min-width: 200px;
+}
+
+.filter-item label {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.filter-select,
+.filter-apply-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: #1a1a2e;
+    border: 2px solid #2a2a3e;
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.filter-select:hover,
+.filter-apply-btn:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.2);
+}
+
+/* Стрелочка у селекта */
+.filter-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300ff88' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+}
+
+/* Кнопка применения */
+.filter-apply-btn {
+    background: var(--accent-primary);
+    color: #000;
+    border: none;
+    font-weight: 800;
+    min-width: 220px;
+}
+
+.filter-apply-btn:hover {
+    background: #00ffaa;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 255, 136, 0.4);
 }

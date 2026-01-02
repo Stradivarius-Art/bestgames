@@ -23,3 +23,29 @@ body.theme-dark {
     --error-color: #ff0055;
     --warning-color: #ffaa00;
 }
+
+/* ===== СВЕТЛАЯ ТЕМА ===== */
+
+body.theme-light {
+    /* Цвета фона */
+    --bg-primary: #f5f5f8 !important;
+    --bg-secondary: #ffffff !important;
+    --bg-tertiary: #f0f0f5 !important;
+    
+    /* Цвета текста */
+    --text-primary: #1a1a2e !important;
+    --text-secondary: #6b6b7f !important;
+    
+    /* Акценты */
+    --accent-primary: #00aa6f !important;
+    --accent-secondary: #0088cc !important;
+    
+    /* Бордеры */
+    --border-color: #e0e0e8 !important;
+    
+    /* Специальные */
+    --link-color: #0088cc !important;
+    --success-color: #00aa6f !important;
+    --error-color: #dd0055 !important;
+    --warning-color: #ee8800 !important;
+}
