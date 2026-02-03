@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - BestGames</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/forms.css">
+
+    <link rel="stylesheet" href='assets/fonts/arialmt.ttf'>
+</head>
+<body class="theme-dark">
+    <!-- ===== ХЕДЕР ===== -->
+    <header class="header">
+        <div class="header__container">
+            <!-- Логотип -->
+            <a href="index.html" class="logo">
+                <img src="/assets/svg/Logo.svg" alt="Logo" class="logo__svg">
+                <span class="logo__text">BestGames</span>
+            </a>
+
+            <!-- Кнопка бургера для мобильных -->
+            <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+
+            <!-- Навигация -->
+            <nav class="nav" id="navMenu">
+                <a href="index.html#search" class="nav__link">Поиск</a>
+                <a href="catalog.html" class="nav__link">Каталог</a>
+                <a href="profile.html" class="nav__link">Профиль</a>
+                <a href="register.html" class="nav__link nav__link--auth">Регистрация</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== ГЛАВНЫЙ КОНТЕНТ ===== -->
+    <main class="main">
+        <section class="auth-section">
+            <div class="container">
+                <div class="auth-wrapper">
+                    <!-- Левая часть с информацией -->
+                    <div class="auth-info">
+                        <h1 class="auth-info__title">Добро пожаловать в BestGames!</h1>
+                        <p class="auth-info__subtitle">Войдите в свой аккаунт и начните покупать любимые игры</p>
+                        
+                        <div class="auth-benefits">
+                            <div class="auth-benefit">
+                                <span class="auth-benefit__icon">🎮</span>
+                                <p class="auth-benefit__text">Доступ к каталогу игр</p>
+                            </div>
+                            <div class="auth-benefit">
+                                <span class="auth-benefit__icon">💳</span>
+                                <p class="auth-benefit__text">Безопасные платежи</p>
+                            </div>
+                            <div class="auth-benefit">
+                                <span class="auth-benefit__icon">📚</span>
+                                <p class="auth-benefit__text">История покупок</p>
+                            </div>
+                            <div class="auth-benefit">
+                                <span class="auth-benefit__icon">⭐</span>
+                                <p class="auth-benefit__text">Личный профиль</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Правая часть с формой -->
+                    <div class="auth-form-wrapper">
+                        <form class="auth-form" id="loginForm">
+                            <h2 class="auth-form__title">Вход</h2>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email" class="form-group__label">E-mail</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    class="form-group__input" 
+                                    placeholder="your@email.com"
+                                    required
+                                >
+                                <span class="form-group__error" id="emailError"></span>
+                            </div>
+
+                            <!-- Пароль -->
+                            <div class="form-group">
+                                <label for="password" class="form-group__label">Пароль</label>
+                                <div class="password-wrapper">
+                                    <input 
+                                        type="password" 
+                                        id="password" 
+                                        class="form-group__input" 
+                                        placeholder="••••••••"
+                                        required
+                                    >
+                                    <button 
+                                        type="button" 
+                                        class="password-toggle" 
+                                        id="passwordToggle"
+                                        aria-label="Показать пароль"
+                                    >
+                                        👁️
+                                    </button>
+                                </div>
+                                <span class="form-group__error" id="passwordError"></span>
+                            </div>
+
+                            <!-- Помнить меня -->
+                            <div class="form-group form-group--checkbox">
+                                <input 
+                                    type="checkbox" 
+                                    id="remember" 
+                                    class="form-group__checkbox"
+                                >
+                                <label for="remember" class="form-group__checkbox-label">Запомнить меня</label>
+                            </div>
+
+                            <!-- Кнопка входа -->
+                            <button type="submit" class="btn btn--primary btn--large">Войти</button>
+
+                            <!-- Ссылка на восстановление пароля -->
+                            <div class="auth-links">
+                                <a href="#" class="auth-link">Забыл пароль?</a>
+                            </div>
+                        </form>
+
+                        <!-- Разделитель -->
+                        <div class="auth-divider">
+                            <span class="auth-divider__text">Нет аккаунта?</span>
+                        </div>
+
+                        <!-- Ссылка на регистрацию -->
+                        <div class="auth-footer">
+                            <p class="auth-footer__text">Создайте новый аккаунт</p>
+                            <a href="register.html" class="btn btn--secondary btn--large">Регистрация</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <!-- Контакты -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Контакты</h3>
+                    <p class="footer__text">📞 8-800-999-55-99</p>
+                    <p class="footer__text">✉️ best@games.ru</p>
+                </div>
+
+                <!-- Клиентам -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Клиентам</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">О нас</a></li>
+                        <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+                        <li><a href="#" class="footer__link">Условия использования</a></li>
+                    </ul>
+                </div>
+
+                <!-- Партнерам -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Партнерам</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Для разработчиков</a></li>
+                        <li><a href="#" class="footer__link">Для инвесторов</a></li>
+                        <li><a href="#" class="footer__link">Для рекламодателей</a></li>
+                    </ul>
+                </div>
+
+                <!-- Навигация -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__list">
+                        <li><a href="index.html" class="footer__link">Главная</a></li>
+                        <li><a href="register.html" class="footer__link">Регистрация</a></li>
+                        <li><a href="login.html" class="footer__link">Авторизация</a></li>
+                        <li><a href="profile.html" class="footer__link">Личный кабинет</a></li>
+                        <li><a href="index.html#search" class="footer__link">Поиск</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Копирайт -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2026 BestGames. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
