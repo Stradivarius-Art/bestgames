@@ -1,0 +1,260 @@
+/* ===== АНИМАЦИИ И ПЕРЕХОДЫ ===== */
+
+/* Плавное появление элемента */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Скольжение слева направо */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Скольжение снизу вверх */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Масштабирование */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Пульсирующий эффект */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Вращение иконки */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Сияние градиента */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Применение анимаций */
+
+/* Логотип */
+.logo {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+/* Навигация */
+.nav__link {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.nav__link:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.nav__link:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.nav__link:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.nav__link:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Слайдер */
+.slider__item {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Карточки преимуществ */
+.benefit-card {
+    animation: slideInUp 0.5s ease-out;
+}
+
+.benefit-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.benefit-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.benefit-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.benefit-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Карточки игр */
+.game-card {
+    animation: scaleIn 0.4s ease-out;
+}
+
+.game-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.game-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.game-card:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.game-card:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.game-card:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+/* Партнеры */
+.partner-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.partner-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.partner-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.partner-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Кнопка переключения темы */
+.theme-toggle:active {
+    animation: rotate 0.6s ease-out;
+}
+
+/* Индикаторы слайдера */
+.slider__indicator {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.slider__indicator--active {
+    animation: none;
+}
+
+/* Эффект наведения на иконки преимуществ */
+.benefit-card__icon {
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.benefit-card:hover .benefit-card__icon {
+    transform: scale(1.2);
+    animation: pulse 0.6s ease-in-out;
+}
+
+/* Эффект наведения на изображения игр */
+.game-card__image {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Плавное появление при загрузке */
+body {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.header {
+    animation: slideInUp 0.5s ease-out;
+}
+
+.footer {
+    animation: slideInUp 0.5s ease-out;
+    animation-delay: 0.5s;
+}
+
+/* Входящие переходы */
+main.main {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Микро-анимация кнопок */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Переход между темами */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header,
+.footer,
+.section-title,
+.nav__link,
+.game-card,
+.benefit-card,
+.partner-card {
+    transition: all 0.3s ease;
+}
